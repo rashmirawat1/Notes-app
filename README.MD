@@ -65,7 +65,7 @@ notes-app/
 ```bash
 # Clone the repo
 git clone https://github.com/rashmirawat1/Notes-app.git
-cd notes-app
+cd Notes-app
 
 # Copy and adjust environment variables (optional)
 cp .env.example .env # Edit .env if you want custom DB user/password
