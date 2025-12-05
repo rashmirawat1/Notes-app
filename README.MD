@@ -28,43 +28,60 @@ A clean, production-ready **3-tier web application** for creating, editing, and 
 | Language        | Python 3.12, Node 20                |
 
 ## Project Structure
+
+```text
 notes-app/
-├── backend/              ← FastAPI backend
+├── backend/                  # FastAPI backend
 │   ├── app/
 │   │   ├── main.py
-│   │   ├── models.py, schemas.py, crud.py
-│   │   └── database.py
+│   │   ├── crud.py
+│   │   ├── database.py
+│   │   ├── models.py
+│   │   └── schemas.py
 │   ├── requirements.txt
+│   ├── .dockerignore
 │   └── Dockerfile
-├── frontend/             ← React frontend
-│   ├── src/
+├── frontend/                 # React frontend
 │   ├── public/
-│   ├── nginx/nginx.conf  ← Proxy /api → backend
-│   ├── Dockerfile        ← Multi-stage build
+│   │   ├── index.html
+│   ├── src/
+│   │   ├── App.js
+│   │   ├── index.js
+│   │   └── index.css
+│   ├── nginx/
+│   │   └── nginx.conf        # Nginx reverse proxy config
+│   ├── .dockerignore
+│   ├── Dockerfile
 │   └── package.json
 ├── docker-compose.yml
-├── .env                  ← (gitignored) DB credentials
+├── .dockerignore
+├── .env                      
+├── .gitignore                # gitignored – DB credentials
 └── README.md
-text## Quick Start (Local)
+```
+
+## Quick Start (Local)
 
 ```bash
-# 1. Clone the repo
+# Clone the repo
 git clone https://github.com/yourusername/notes-app.git
 cd notes-app
 
-# 2. Copy and adjust environment variables (optional)
-cp .env.example .env
-# Edit .env if you want custom DB user/password
+# Copy and adjust environment variables (optional)
+cp .env.example .env # Edit .env if you want custom DB user/password
 
-# 3. Start everything
+# Start everything
 docker compose up --build -d
 
-# 4. Open the app
+# Open the app
 http://localhost
 API Docs & Swagger UI → http://localhost/api/docs
 ReDoc → http://localhost/api/redoc
-Useful Docker Commands
-Bash# View logs
+```
+
+## Docker Commands
+```bash
+# View logs
 docker compose logs -f
 
 # Stop everything
@@ -75,38 +92,30 @@ docker compose down -v
 
 # Rebuild after code changes
 docker compose up --build -d
-Deployment (AWS EC2, DigitalOcean, etc.)
+```
+## Deployment (AWS EC2, DigitalOcean, etc.)
 
-SSH into your server
-Install Docker + Docker Compose
-Clone this repository
-Run:
+- SSH into your server
+- Install Docker + Docker Compose
+- Clone this repository
+- Run:
+```bash
+        docker compose up -d
+```
+- Open port 80 and your app will be live at your server’s public IP or domain!
 
-Bashdocker compose up -d
-
-Open port 80 (and optionally 443 for HTTPS)
-Your app will be live at your server’s public IP or domain!
-
-Environment Variables (.env)
-envDB_USER=user
-DB_PASSWORD=password
-DB_NAME=notesdb
-# You can change these – just keep them in sync in docker-compose.yml
-Security & Production Tips
-
-Use strong DB credentials in production
-Add HTTPS (Let’s Encrypt + Nginx or AWS ALB)
-Consider adding authentication later (JWT, OAuth2, etc.)
-
-Contributing
+- Environment Variables (.env)
+'''
+    envDB_USER=user
+    DB_PASSWORD=password
+    DB_NAME=notesdb
+    #You can change these – just keep them in sync in docker-compose.yml
+'''
+## Contributing
 Pull requests are welcome! Feel free to:
-
-Improve UI/UX
-Add authentication
-Add tests (PyTest + Jest)
-Optimize Dockerfiles
-
-License
-MIT © 2025 Your Name
+- Improve UI/UX
+- Add authentication
+- Add tests (PyTest + Jest)
+- Optimize Dockerfiles
 
 Enjoy your blazing-fast, fully containerized notes app!
