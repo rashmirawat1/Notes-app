@@ -110,7 +110,7 @@ docker compose up --build -d
     DB_NAME=notesdb
     #You can change these – just keep them in sync in docker-compose.yml
 ```
-## Contributing
+## Contribution
 Pull requests are welcome! Feel free to:
 - Improve UI/UX
 - Add authentication
