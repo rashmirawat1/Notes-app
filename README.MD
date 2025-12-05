@@ -110,6 +110,18 @@ docker compose up --build -d
     DB_NAME=notesdb
     #You can change these – just keep them in sync in docker-compose.yml
 ```
+## Screenshots
+
+### Notes App
+![Screenshot-1](screenshots/Screenshot-1.png)
+
+### Docker Configuration 
+![Screenshot-2](screenshots/Screenshot-2.png)
+
+![Screenshot-3](screenshots/Screenshot-3.png)
+
+![Screenshot-1](screenshots/Screenshot-4.png)
+
 ## Contribution
 Pull requests are welcome! Feel free to:
 - Improve UI/UX
