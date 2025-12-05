@@ -64,7 +64,7 @@ notes-app/
 
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/notes-app.git
+git clone https://github.com/rashmirawat1/Notes-app.git
 cd notes-app
 
 # Copy and adjust environment variables (optional)
@@ -75,7 +75,7 @@ docker compose up --build -d
 
 # Open the app
 http://localhost
-API Docs & Swagger UI → http://localhost/api/docs
+API Docs and Swagger UI → http://localhost/api/docs
 ReDoc → http://localhost/api/redoc
 ```
 
@@ -100,17 +100,16 @@ docker compose up --build -d
 - Clone this repository
 - Run:
 ```bash
-        docker compose up -d
+    docker compose up -d
 ```
 - Open port 80 and your app will be live at your server’s public IP or domain!
-
 - Environment Variables (.env)
-'''
+```bash
     envDB_USER=user
     DB_PASSWORD=password
     DB_NAME=notesdb
     #You can change these – just keep them in sync in docker-compose.yml
-'''
+```
 ## Contributing
 Pull requests are welcome! Feel free to:
 - Improve UI/UX
