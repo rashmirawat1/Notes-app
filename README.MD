@@ -1,10 +1,7 @@
 # Notes App – 3-Tier Full-Stack Application  
 **FastAPI • React • PostgreSQL • Nginx • Docker Compose**
 
-A clean, production-ready **3-tier web application** for creating, editing, and deleting notes. Fully containerized with Docker and ready for deployment on AWS EC2, Render, Fly.io, DigitalOcean, or any Docker host.
-
-![Preview](https://raw.githubusercontent.com/yourusername/notes-app/main/preview.png)  
-*(Replace the link above with a real screenshot after the first deploy)*
+A robust, scalable **3-tier web application** for managing personal notes including creating, editing, and deleting notes. Containerized with multi-stage Dockerfiles and orchestrated via Docker Compose, the app deploys effortlessly on AWS EC2— embodying modern DevOps best practices for maintainability, security, and scalability.
 
 ## Features
 
@@ -74,12 +71,14 @@ cp .env.example .env # Edit .env if you want custom DB user/password
 docker compose up --build -d
 
 # Open the app
-http://localhost
-API Docs and Swagger UI → http://localhost/api/docs
-ReDoc → http://localhost/api/redoc
+Main App → http://localhost
+FastAPI Swagger UI → http://localhost/api/docs
+FastAPI ReDoc → http://localhost/api/redoc
+Direct backend test → http://localhost:8000/docs
 ```
 
 ## Docker Commands
+
 ```bash
 # View logs
 docker compose logs -f
@@ -93,6 +92,7 @@ docker compose down -v
 # Rebuild after code changes
 docker compose up --build -d
 ```
+
 ## Deployment (AWS EC2, DigitalOcean, etc.)
 
 - SSH into your server
@@ -103,13 +103,14 @@ docker compose up --build -d
     docker compose up -d
 ```
 - Open port 80 and your app will be live at your server’s public IP or domain!
-- Environment Variables (.env)
+- Create environment Variables (.env file) 
 ```bash
     envDB_USER=user
     DB_PASSWORD=password
     DB_NAME=notesdb
     #You can change these – just keep them in sync in docker-compose.yml
 ```
+
 ## Screenshots
 
 ### Notes App
@@ -122,11 +123,14 @@ docker compose up --build -d
 
 ![Screenshot-1](screenshots/Screenshot-4.png)
 
+
 ## Contribution
 Pull requests are welcome! Feel free to:
 - Improve UI/UX
+- Search & filter
+- Export notes as Markdown/PDF
 - Add authentication
-- Add tests (PyTest + Jest)
+- Add Unit & Integration tests
 - Optimize Dockerfiles
 
 Enjoy your blazing-fast, fully containerized notes app!
