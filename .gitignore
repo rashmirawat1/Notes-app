@@ -63,6 +63,3 @@ pnpm-debug.log*
 # Build artifacts (Docker sometimes creates these locally)
 *.tar
 *.tar.gz
-
-# Optional: ignore local docker-compose testing files
-docker-compose.yml
